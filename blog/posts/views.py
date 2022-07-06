@@ -19,6 +19,10 @@ class PostCreateView(CreateView):
     model = Post
     form_class = PostForm
     template_name = 'add_post.html'
+    def form_valid(self,form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+    
     #fields = '__all__'
     #fields = ('title','body') - Selecionar algunos fields del modelo
 
