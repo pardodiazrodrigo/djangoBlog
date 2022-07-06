@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if category_post %}
+<h1>Category: {{ cats }} </h1>
+
+<ul>
+{% for post in category_post %}
+    <li><a href="{% url 'article-detail' post.pk %}"> <h2>{{post.title }} </h2></a> - {{ post.author.first_name }} - {{post.post_date}}</li>
+    {{ post.body | slice:'100' }}...
+{% endfor %}
+</ul>
+
+{% else %}
+No post for that category.
+
+{% endif %}
+{% endblock %}
