@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
 
+{% block title %}
+<h1>All Posts</h1>
+{% endblock %}
+
 {% block content %}
-<h4>Last Posts:</h4>
 <ul>
-{% for post in object_list|slice:":3" %}
+{% for post in object_list %}
     <li><a href="{% url 'article-detail' post.pk %}"> <h2>{{post.title }}</h2> </a> - {{ post.author }} - {{post.post_date}} - <a href="{% url 'category' post.category|slugify %}"> {{post.category}} </a></li>
     {{ post.title_tag | slice:'100' }}...
 
 {% endfor %}
 </ul>
-<a href="{% url 'pages' %}"> <button type="button" class="btn btn-secondary">See all posts</button></a>
 {% endblock %}

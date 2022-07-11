@@ -2,6 +2,7 @@ from turtle import title
 from unicodedata import category
 from django.db import models
 from django.contrib.auth.models import User
+from django.forms import ImageField
 from django.urls import reverse
 from datetime import datetime, date
 from ckeditor.fields import RichTextField
@@ -35,6 +36,14 @@ class Post(models.Model):
     
     def get_absolute_url(self):
         return reverse('home')
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    profile_pic = models.ImageField(null=True,blank=True,upload_to='images/profile/')
+    
+
+    def __str__(self):
+        return str(self.user)
 
 
 

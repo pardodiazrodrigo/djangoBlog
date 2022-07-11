@@ -11,6 +11,11 @@ class HomeView(ListView):
     ordering = ['-id']
     #ordering = ['-post_date']
 
+class PagesView(ListView):
+    model = Post
+    template_name = 'pages.html'
+    ordering = ['-id']
+
 class ArticleDetailView(DetailView):
     model = Post
     template_name = 'article_detail.html'
@@ -49,3 +54,7 @@ def CategoryView(request,cats):
     cats = cats.replace('-',' ')
 
     return render(request,'categories.html',{'cats':cats,'category_post':category_post})
+
+def AboutView(request):
+    return render(request,'about.html')
+

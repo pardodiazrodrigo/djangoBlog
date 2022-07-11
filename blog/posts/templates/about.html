@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block background %}
+<header class="masthead" style="background-image: url('{% static "posts/assets/img/about-bg.jpg" %}')">
+
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+{% endblock %}
+
+{% block title %} 
+<h1>About Us</h1>
+<span class="subheading">A little bit of us</span>
+{% endblock %}
+{% block content %}
+
+<ul>
+<img src= '{% static "/blog/images/Profile Rodrigo.jpg" %}' width=200 height=200 class='rounded-circle'> <h1>Rodrigo Pardo </h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultrices, erat ac fermentum scelerisque, quam sapien fermentum eros, id auctor massa metus ac nibh. Aliquam erat volutpat. Praesent hendrerit purus ultrices nibh gravida, id condimentum nisi feugiat. Nunc non rutrum nisi. Cras consequat convallis pulvinar. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+<img src= '{% static "/blog/images/Profile Juan.jpg" %}' width=200 height=200 class='rounded-circle'> <h1>Juan Garcia Rezusta</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultrices, erat ac fermentum scelerisque, quam sapien fermentum eros, id auctor massa metus ac nibh. Aliquam erat volutpat. Praesent hendrerit purus ultrices nibh gravida, id condimentum nisi feugiat. Nunc non rutrum nisi. Cras consequat convallis pulvinar. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+</ul>
+{{ cat_menu }}
+{% endblock %}
