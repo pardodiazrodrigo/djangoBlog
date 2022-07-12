@@ -30,3 +30,7 @@ Admin
 
 * Superuser "rodrigopardo" pass: 1234
 
+Video tutorial
+
+https://drive.google.com/file/d/1XfSZeYXB-i0kd1s6sMfCjwIXQMfJgNdo/view?usp=sharing
+
